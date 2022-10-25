@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { abouts } from "../../constants/abouts.js";
 
 import "./About.scss";
+import AppWrap from "../../wrapper/AppWrap.js";
 
 const About = () => {
   return (
@@ -34,4 +35,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AppWrap(About, "à propos");
