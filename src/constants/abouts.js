@@ -17,7 +17,7 @@ export const abouts = [
     imgUrl: images.about03,
   },
   {
-    title: "React / Redux Apps",
+    title: "React / Redux",
     description: "Je suis un bon développeur",
     imgUrl: images.about04,
   },
