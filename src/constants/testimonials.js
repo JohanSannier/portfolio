@@ -21,17 +21,21 @@ export const brands = [
   {
     imgurl: images.nb,
     name: "New Balance",
+    id: 0,
   },
   {
     imgurl: images.skype,
     name: "Skype",
+    id: 1,
   },
   {
     imgurl: images.spotify,
     name: "Spotify",
+    id: 2,
   },
   {
     imgurl: images.bolt,
     name: "Bolt",
+    id: 3,
   },
 ];
