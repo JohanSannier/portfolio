@@ -4,6 +4,7 @@ import { abouts } from "../../constants/abouts.js";
 
 import "./About.scss";
 import AppWrap from "../../wrapper/AppWrap.js";
+import MotionWrap from "../../wrapper/MotionWrap.js";
 
 const About = () => {
   return (
@@ -35,4 +36,8 @@ const About = () => {
   );
 };
 
-export default AppWrap(About, "à propos");
+export default AppWrap(
+  MotionWrap(About, "app__about"),
+  "à propos",
+  "app__whitebg"
+);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
-import { AppWrap } from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 import { abouts } from "../../constants/abouts";
 import { projects } from "../../constants/projects";
 
@@ -118,4 +118,8 @@ const Work = () => {
   );
 };
 
-export default AppWrap(Work, "projets");
+export default AppWrap(
+  MotionWrap(Work, "app__works"),
+  "projets",
+  "app__primarybg"
+);

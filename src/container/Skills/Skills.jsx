@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import ReactTooltip, { reactToolTip } from "react-tooltip";
-import { AppWrap } from "../../wrapper";
-import { abouts } from "../../constants/abouts";
-import { projects } from "../../constants/projects";
+import ReactTooltip from "react-tooltip";
+import { AppWrap, MotionWrap } from "../../wrapper";
 import { skills } from "../../constants/skills.js";
-import "./Skills.scss";
 import { experiences } from "../../constants/experiences";
+import "./Skills.scss";
 
 const Skills = () => {
   return (
@@ -72,4 +70,8 @@ const Skills = () => {
   );
 };
 
-export default AppWrap(Skills, "compétences");
+export default AppWrap(
+  MotionWrap(Skills, "app__skills"),
+  "compétences",
+  "app__whitebg"
+);
