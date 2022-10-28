@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
+import emailjs from "@emailjs/browser";
 import "./Footer.scss";
 
 const Footer = () => {
@@ -15,20 +16,34 @@ const Footer = () => {
   const { name, email, message } = formData;
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
 
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () => {
+  const sendEmail = () => {
+    emailjs
+      .send(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        formData,
+        process.env.REACT_APP_PUBLIC_KEY
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          setLoading(false);
+          setIsFormSubmitted(true);
+        },
+        (err) => {
+          console.log("FAILED...", err);
+        }
+      );
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     setLoading(true);
-    const contact = {
-      name,
-      email,
-      message,
-    };
-    setLoading(false);
-    setIsFormSubmitted(true);
+    sendEmail();
   };
 
   return (
@@ -50,38 +65,43 @@ const Footer = () => {
       </div>
       {!isFormSubmitted ? (
         <div className="app__footer-form app__flex">
-          <div className="app__flex">
-            <input
-              type="text"
-              className="p-text"
-              placeholder="Votre nom"
-              name="name"
-              value={name}
-              onChange={handleChangeInput}
-            />
-          </div>
-          <div className="app__flex">
-            <input
-              type="email"
-              className="p-text"
-              placeholder="Votre email"
-              name="email"
-              value={email}
-              onChange={handleChangeInput}
-            />
-          </div>
-          <div>
-            <textarea
-              name="message"
-              className="p-text"
-              placeholder="Votre message"
-              value={message}
-              onChange={handleChangeInput}
-            ></textarea>
-          </div>
-          <button type="button" className="p-text" onClick={handleSubmit}>
-            {loading ? "Envoie en cours..." : "Envoyer le message"}
-          </button>
+          <form onSubmit={(e) => handleSubmit(e)}>
+            <div className="app__flex">
+              <input
+                type="text"
+                className="p-text"
+                placeholder="Votre nom"
+                name="name"
+                value={name}
+                onChange={handleChangeInput}
+                required
+              />
+            </div>
+            <div className="app__flex">
+              <input
+                type="email"
+                className="p-text"
+                placeholder="Votre email"
+                name="email"
+                value={email}
+                onChange={handleChangeInput}
+                required
+              />
+            </div>
+            <div>
+              <textarea
+                name="message"
+                className="p-text"
+                placeholder="Votre message"
+                value={message}
+                onChange={handleChangeInput}
+                required
+              ></textarea>
+            </div>
+            <button className="p-text">
+              {loading ? "Envoie en cours..." : "Envoyer le message"}
+            </button>
+          </form>
         </div>
       ) : (
         <div>
