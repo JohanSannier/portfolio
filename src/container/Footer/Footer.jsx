@@ -30,12 +30,11 @@ const Footer = () => {
       )
       .then(
         (response) => {
-          console.log("SUCCESS!", response.status, response.text);
           setLoading(false);
           setIsFormSubmitted(true);
         },
         (err) => {
-          console.log("FAILED...", err);
+          console.log("Erreur...", err);
         }
       );
   };
@@ -48,7 +47,7 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className="head-text">Boire un café & Discutez avec moi</h2>
+      <h2 className="head-text">Prenez contact avec moi</h2>
       <div className="app__footer-cards">
         <div className="app__footer-card">
           <img src={images.email} alt="email" />
@@ -56,12 +55,12 @@ const Footer = () => {
             johan.sanniercaffier@gmail.com
           </a>
         </div>
-        <div className="app__footer-card">
+        {/* <div className="app__footer-card">
           <img src={images.mobile} alt="téléphone" />
           <a href="tel:+33 123 456 789" className="p-text">
             +33 123 456 789
           </a>
-        </div>
+        </div> */}
       </div>
       {!isFormSubmitted ? (
         <div className="app__footer-form app__flex">
