@@ -1,6 +1,6 @@
 export const experiences = [
   {
-    year: "2020",
+    year: "2022",
     works: [
       {
         name: "Frontend Developer",

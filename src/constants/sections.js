@@ -3,6 +3,6 @@ export const sections = [
   "à propos",
   "projets",
   "compétences",
-  "recommandation",
+  // "recommandation",
   "contact",
 ];

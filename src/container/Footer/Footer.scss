@@ -18,7 +18,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin: 1rem 0;
+    // margin: 1rem 0;
     padding: 1rem;
     border-radius: 10px;
     cursor: pointer;
@@ -113,5 +113,21 @@
   @media screen and (max-width: 768px) {
     width: 100%;
     margin: 1rem 0;
+  }
+}
+
+.mail-btn {
+  transition: background-color 200ms ease-in-out;
+  &:hover {
+    background-color: #317fac;
+  }
+}
+.mailing-div {
+  .mail-img {
+    max-width: 400px;
+
+    img {
+      width: 100%;
+    }
   }
 }

@@ -3,22 +3,22 @@ import { images } from "./index";
 export const abouts = [
   {
     title: "React",
-    description: "Je suis un bon développeur",
+    description: "Développement d'applications web performantes avec React",
     imgUrl: images.about01,
   },
   {
     title: "Redux",
-    description: "Je suis un bon développeur",
+    description: "Utilisation de Redux comme gestionnaire d'état",
     imgUrl: images.about04,
   },
   {
     title: "UI / UX",
-    description: "Je suis un bon développeur",
+    description: "Intégration d'interfaces utilisateur travaillées",
     imgUrl: images.about03,
   },
   {
     title: "API",
-    description: "Je suis un bon développeur",
+    description: "Traitement de données avec API",
     imgUrl: images.about02,
   },
 ];

@@ -20,9 +20,12 @@
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-right: 5rem;
+  // Pour la section postes
+  // justify-content: flex-start;
+  // align-items: flex-start;
+  // margin-right: 5rem;
+  justify-content: center;
+  align-items: center;
 
   @media screen and (max-width: 900px) {
     margin-right: 0;

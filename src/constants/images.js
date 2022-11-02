@@ -28,6 +28,8 @@ import nb from "../assets/nb.png";
 import skype from "../assets/skype.png";
 import spotify from "../assets/spotify.png";
 import webDeveloper from "../assets/web-developer.png";
+import mailSent from "../assets/mailSent.png";
+import tailwind from "../assets/tailwind.png";
 
 import cryptotracker from "../assets/capture_cryptotracker.png";
 import hoobank from "../assets/capture_hoobank.png";
@@ -71,4 +73,6 @@ export default {
   spotify,
   woman,
   webDeveloper,
+  mailSent,
+  tailwind,
 };

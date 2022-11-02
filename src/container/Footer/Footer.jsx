@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 import "./Footer.scss";
 
 const Footer = () => {
@@ -47,7 +48,11 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className="head-text">Prenez contact avec moi</h2>
+      {isFormSubmitted ? (
+        <h3 className="head-text">Merci de m'avoir contacté !</h3>
+      ) : (
+        <h2 className="head-text">Prenez contact avec moi</h2>
+      )}
       <div className="app__footer-cards">
         <div className="app__footer-card">
           <img src={images.email} alt="email" />
@@ -97,14 +102,20 @@ const Footer = () => {
                 required
               ></textarea>
             </div>
-            <button className="p-text">
+            <button className="p-text mail-btn">
               {loading ? "Envoie en cours..." : "Envoyer le message"}
             </button>
           </form>
         </div>
       ) : (
-        <div>
-          <h3 className="head-text">Merci de m'avoir contacté !</h3>
+        <div className="mailing-div">
+          <motion.div
+            whileInView={{ opacity: [0, 1] }}
+            transition={{ duration: 0.5 }}
+            className="mail-img"
+          >
+            <img src={images.mailSent} alt="Merci" />
+          </motion.div>
         </div>
       )}
       <div className="copyright">
