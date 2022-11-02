@@ -84,7 +84,10 @@
     width: 100%;
     height: 100%;
     border-radius: 0.5rem;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: left;
+    -o-object-fit: cover;
+    -o-object-position: left;
   }
 
   @media screen and (min-width: 2000px) {
@@ -104,6 +107,10 @@
   border-radius: 0.5rem;
   opacity: 0;
   transition: all 0.3s ease;
+
+  @media screen and (max-width: 900px) {
+    opacity: 1;
+  }
 
   div {
     width: 50px;
