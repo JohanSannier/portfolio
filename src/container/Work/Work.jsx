@@ -8,7 +8,7 @@ import { projects } from "../../constants/projects";
 import "./Work.scss";
 
 const Work = () => {
-  const [activeFilter, setActiveFilter] = useState("All");
+  const [activeFilter, setActiveFilter] = useState("Tous les projets");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [filterWork, setFilterWork] = useState(projects);
 
@@ -21,7 +21,9 @@ const Work = () => {
     }
     return 0;
   }
-  const filterTags = [...abouts, { title: "All" }].sort(compare);
+  const filterTags = [...abouts].sort(compare);
+  // eslint-disable-next-line no-unused-vars
+  const newTags = filterTags.unshift({ title: "Tous les projets" });
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
@@ -30,7 +32,7 @@ const Work = () => {
     setTimeout(() => {
       setAnimateCard([{ y: 0, opacity: 1 }]);
 
-      if (item === "All") {
+      if (item === "Tous les projets") {
         setFilterWork(projects);
       } else {
         setFilterWork(projects.filter((work) => work.tags.includes(item)));

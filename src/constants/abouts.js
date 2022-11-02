@@ -2,14 +2,14 @@ import { images } from "./index";
 
 export const abouts = [
   {
-    title: "Développement web",
+    title: "React",
     description: "Je suis un bon développeur",
     imgUrl: images.about01,
   },
   {
-    title: "MERN Stack",
+    title: "Redux",
     description: "Je suis un bon développeur",
-    imgUrl: images.about02,
+    imgUrl: images.about04,
   },
   {
     title: "UI / UX",
@@ -17,8 +17,8 @@ export const abouts = [
     imgUrl: images.about03,
   },
   {
-    title: "React / Redux",
+    title: "API",
     description: "Je suis un bon développeur",
-    imgUrl: images.about04,
+    imgUrl: images.about02,
   },
 ];
